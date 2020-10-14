@@ -14,8 +14,8 @@ Requirements 1.5:
 
 Requirements 2:
 - The scripts needs to be extended to do the following:
-    - Generate a random password if no password is passed in as an argument
-    - The username and password for the newly created user are written to a file
-    - The file is sent as an email attachment to the user, with a success message
-    - The file with the user’s credentials is deleted from the system
-    - Company Rules file is in the user's home directory
+    1. Generate a random password if no password is passed in as an argument
+    2. The username and password for the newly created user are written to a file
+    3. The file is sent as an email attachment to the user, with a success message
+    4. The file with the user’s credentials is deleted from the system
+    5. Company Rules file is in the user's home directory
