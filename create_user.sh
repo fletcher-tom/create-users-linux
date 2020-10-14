@@ -25,3 +25,7 @@ touch credentials.txt
 echo "Login credentials" >> credentials.txt
 echo "Username: $USERNAME" >> credentials.txt
 echo "Password: $PASSWORD" >> credentials.txt
+
+# 2.iii
+# The credentials.txt file is sent as an email attachment to the user with a success message
+mail -a "credentials.txt" -s "Here are your login credentials" $USERNAME@domain.com < /dev/null
