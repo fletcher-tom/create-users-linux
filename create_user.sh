@@ -6,6 +6,7 @@ PASSWORD="$2"
 # Add user account with name passed in as first parameter
 sudo useradd $USERNAME
 
+# 2.i 
 # Check if password was passed in 
 # -z = check if string is null, i.e. check if $PASSWORD has zero length
 if [ -z $PASSWORD];
@@ -18,3 +19,9 @@ fi
 # && = only run command on right if the command on the left has run successfully
  echo "$USERNAME:$PASSWORD" | sudo chpasswd && echo "Account for $USERNAME has been created"
 
+# 2.ii 
+# Write username and password to a file
+touch credentials.txt 
+echo "Login credentials" >> credentials.txt
+echo "Username: $USERNAME" >> credentials.txt
+echo "Password: $PASSWORD" >> credentials.txt
