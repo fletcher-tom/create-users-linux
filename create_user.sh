@@ -1,7 +1,7 @@
 #!/bin/bash
 
-USERNAME="$1"
-PASSWORD="$2"
+USERNAME="$2"
+PASSWORD="$3"
 addUser()
 {
     # Add user account with name passed in as first parameter
@@ -42,4 +42,21 @@ addUser()
     # Copy company_rules.txt file to the new user's home directory
     sudo cp company_rules.txt "/home/$USERNAME"
 }
-addUser
+
+# 3 
+# Delete a user and remove their home directory folder.
+removeUser()
+{
+    sudo userdel $USERNAME && sudo rm -rf /home/$USERNAME && \
+    echo "Account for $USERNAME successfully removed."
+}
+
+# 3
+# Determine which function should run
+if [ "$1" == "add" ];
+    then addUser
+elif [ "$1" == "remove" ];
+    then removeUser
+else 
+    echo "You must enter add or remove"
+fi
