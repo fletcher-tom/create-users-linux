@@ -1,10 +1,9 @@
 #!/bin/bash
 
+USERNAME="$1"
+PASSWORD="$2"
 addUser()
 {
-    USERNAME="$1"
-    PASSWORD="$2"
-
     # Add user account with name passed in as first parameter
     # -m added to create home directory for user
     sudo useradd -m $USERNAME
@@ -43,3 +42,4 @@ addUser()
     # Copy company_rules.txt file to the new user's home directory
     sudo cp company_rules.txt "/home/$USERNAME"
 }
+addUser
