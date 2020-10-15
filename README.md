@@ -19,3 +19,7 @@ Requirements 2:
     3. The file is sent as an email attachment to the user, with a success message
     4. The file with the user’s credentials is deleted from the system
     5. Company Rules file is in the user's home directory
+
+Requirements 3:
+- Add a function which can remove a user from the system (remove profile & home directory)
+- The script needs to be able to determine whether it should add or remove a user. 
