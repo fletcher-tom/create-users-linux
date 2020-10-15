@@ -28,4 +28,13 @@ echo "Password: $PASSWORD" >> credentials.txt
 
 # 2.iii
 # The credentials.txt file is sent as an email attachment to the user with a success message
-mail -a "credentials.txt" -s "Here are your login credentials" $USERNAME@domain.com < /dev/null
+mail -A "credentials.txt" -s "Here are your login credentials" "$USERNAME@domain.com" < /dev/null && \
+    echo "email with the credentials file has been successfully sent." && \
+    # 2.iv
+    # Delete credentials.txt file
+    echo "Deleting credentials file" && \
+    rm -rf credentials.txt
+
+# 2.iv
+# Delete credentials.txt file
+rm -rf credentials.txt
